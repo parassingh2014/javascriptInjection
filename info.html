@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Injection</title>
+        <link rel = "stylesheet" href="styles.css">
+        <!-- <script src="main.js"></script>  -->
+        <script>
+            document.cookie = "username=rmarwaha@noemail.com";
+document.cookie = "password=afe_password";
+if (document.readyState == 'loading') {
+	document.addEventListener('DOMContentLoaded', ready)
+} else {
+	ready()
+}
+
+function ready() {
+	var query = new URL(window.location).searchParams.get('query')
+   
+	document.getElementById('query-input').value = query;
+   
+	document.getElementById('query-output').innerHTML = query //+ "  " + query2;
+
+}
+        </script>
+    </head>
+
+<!-- /* <img src onerror="var username = localStorage.getItem('Number'); console.log(username);">
+<img src onerror="var username = localStorage.getItem('Number'); console.log(username);">
+<a href ="#" onclick="alert(JSON.stringify(localStorage))">Click</a>
+
+<img src onerror="console.log(document.cookie)"> */
+
+/* <a href ="#" onclick="alert(JSON.stringify(localStorage))">Click</a> */ -->
+  
+    <body>
+      <h2 class="search-form-header">Website Message</h2>
+      <form class="search-form" autocomplete="off">
+        <label for="query">Message:</label>
+          <input class="search-input" id="query-input" type="text" name="query" />           
+          <button class="search-button" type="submit" role="button">Submit</button>
+      </form>
+      <h2 class="search-query">You Entered: <span id="query-output" class="query"></span></h2>
+      <div style="text-align:center"><button class="search-button" type="submit" role="button"><a href="index.html"><- Back</a></button>   
+      
+      </div>
+    </body>
+</html>
